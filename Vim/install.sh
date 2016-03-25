@@ -12,11 +12,19 @@ if [ -d $dir ]; then
 	$pathogen
 
 	file=".vim/vimrc"
-	string="execute pathogen#infect()"
+	string="filetype off"
 	echo $string >> $file
-	string="syntax on"
+
+	string="call pathogen#infect()"
 	echo $string >> $file
+
+	string="call pathogen#helptags()"
+	echo $string >> $file
+
 	string="filetype plugin indent on"
+	echo $string >> $file
+
+	string="syntax on"
 	echo $string >> $file
 
 	path=".vim/bundle"
@@ -25,7 +33,9 @@ if [ -d $dir ]; then
 	git="git clone git://github.com/tpope/vim-sensible.git"
 	$git
 
-	#install PYTHON-MODE
+	git="git clone https://github.com/klen/python-mode.git"
+	$git
+
 else
 	echo "Need install vim"
 fi
