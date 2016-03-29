@@ -1,0 +1,35 @@
+set number "turn on line number"
+set numberwidth=2   "set the line numbers to 2 spaces"
+set tabstop=2	"set 2 spaces for tab"
+set shiftwidth=2 "set 2 space for insert indentation"
+set lcs=eol:¬,tab:\ \  "set character ¬ in the end of line"
+set list "turn on the character"
+execute pathogen#infect()
+
+filetype plugin on "turn on plugin python doc
+let g:pydoc_cmd = '/usr/bin/pydoc' "location python doc
+let g:pydoc_highlight=0 "turn off highlight
+
+let name = "LimaFabio" "set name in to the name variable"
+
+function! NoNum() "turn off the set number"
+	set nonumber
+	set nolist
+endfunc
+
+function! Num() "turn on the set number"
+	set number
+	set list
+endfunc
+
+function FileHeading() "header for solution problems"
+	let s:line=line(".")
+	call setline(s:line,"#")
+	call setline(s:line+1,"#problem solved by Benegripe")
+	call setline(s:line+2,"#/usr/bin/")
+	unlet s:line
+endfunc
+
+map <c-h> : call FileHeading()<cr>
+map <c-n> : call NoNum()<cr>
+map <c-m> : call Num()<cr>
