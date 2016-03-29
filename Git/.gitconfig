@@ -1,2 +1,7 @@
+[user]
+	name = LimaFabio
+	email = fabiolima39@gmail.com
+[color]
+	ui = true
 [core]
 	editor = vim
