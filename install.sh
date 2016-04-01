@@ -4,12 +4,12 @@
 dist_os=$(lsb_release -si)
 pac=''
 if [ "$dist_os" = "Ubuntu" ];  then
-	sudo -v
+	tools=('vim' 'git' 'ctags' 'tmux','wget')
 	pac="apt-get install"
-	$pac "vim"
-	$pac "git"
-	$pac "ctags"
-	$pac "tmux"
+	for i in "${tools[@]}"
+	do
+		sudo $pac $i
+	done
 else
 	echo "not suppor to this Operating System"
 fi
