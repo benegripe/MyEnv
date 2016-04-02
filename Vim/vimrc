@@ -4,7 +4,10 @@ set tabstop=2	"set 2 spaces for tab"
 set shiftwidth=2 "set 2 space for insert indentation"
 set lcs=eol:¬,tab:\ \  "set character ¬ in the end of line"
 set list "turn on the character"
-execute pathogen#infect()
+call pathogen#infect()
+call pathogen#helptags()
+syntax on
+filetype off
 
 filetype plugin on "turn on plugin python doc
 let g:pydoc_cmd = '/usr/bin/pydoc' "location python doc
