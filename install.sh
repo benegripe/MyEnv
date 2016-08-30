@@ -11,5 +11,5 @@ if [ "$dist_os" = "Ubuntu" ];  then
 		sudo $pac $i
 	done
 else
-	echo "not suppor to this Operating System"
+	echo "not support to this Operating System"
 fi
