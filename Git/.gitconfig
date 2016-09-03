@@ -5,3 +5,9 @@
 	ui = true
 [core]
 	editor = vim
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=oneline
