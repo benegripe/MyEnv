@@ -1,6 +1,32 @@
 #!/bin/sh
-
-#this file need stay in home directory
+#
+#solved by FabioLima
+#
+#NameScript:	configure_vim.sh
+#
+#Author and Maintaining: Fabio Lima
+#
+#-----------------------------------
+#Description:
+#
+#This script install and configure pathogen,nerdtree,python-mode,vim sensitive
+#The script must be in home directory for install in the right place
+#
+#-----------------------------------
+#
+#Example:
+# $ ./configure_vim.sh
+#
+#-----------------------------------
+#
+#History:
+#
+#v1.0 2016/09/07, FabioLima
+#
+#-----------------------------------
+#
+#License: GPL
+#
 
 #install PATHOGEN
 folder=".vim/autoload .vim/bundle"
