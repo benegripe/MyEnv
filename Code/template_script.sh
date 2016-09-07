@@ -5,7 +5,7 @@
 #Author and Maintaining: Fabio Lima
 #
 #-----------------------------------
-#Description
+#Description:
 #
 #This is a script to make others scripts in bash or python
 #The script receive 2 parameters the name and extension,just py or sh, and create a file o local with a template documentation,
@@ -51,7 +51,7 @@ if ! [ -f "$name_full" ]; then
 	echo "#Author and Maintaining: Fabio Lima" >> $name_full
 	echo "#" >> $name_full
 	echo "#-----------------------------------" >> $name_full
-	echo "#Description" >> $name_full
+	echo "#Description:" >> $name_full
 	echo "#" >> $name_full
 	echo "#" >> $name_full
 	echo "#-----------------------------------" >> $name_full
@@ -63,7 +63,10 @@ if ! [ -f "$name_full" ]; then
 	echo "#" >> $name_full
 	echo "#History" >> $name_full
 	echo "#" >> $name_full
-	echo "#v1.0 2016/09/07, FabioLima" >> $name_full
+	date_time="#v1.0 "
+	date_time+=$(date +"%Y/%m/%d")
+	date_time+=", FabioLima"
+	echo $date_time >> $name_full
 	echo "#" >> $name_full
 	echo "#-----------------------------------" >> $name_full
 	echo "#" >> $name_full
