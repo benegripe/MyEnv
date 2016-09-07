@@ -9,8 +9,9 @@
 #-----------------------------------
 #Description:
 #
-#This script install and configure pathogen,nerdtree,python-mode,vim sensitive
-#The script must be in home directory for install in the right place
+#This script install and configure plugin of vim: pathogen,nerdtree,python-mode,vim sensitive
+#The script must be in home directory for install in the right place and use the file vimrc for configuration in vim
+#
 #
 #-----------------------------------
 #
