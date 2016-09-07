@@ -12,5 +12,5 @@ elif [ "$dist_os" = "Debian" ];  then
 fi
 for i in "${tools[@]}"
 do
-	sudo $pac $i
+	$pac $i
 done
