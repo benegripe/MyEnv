@@ -73,6 +73,12 @@ if ! [ -f "$name_full" ]; then
 	echo "#License: GPL" >> $name_full
 	echo "#" >> $name_full
 
+	if [ ${file_extension,,} = "sh" ]; then
+		echo "	" >> $name_full
+		echo "Debug(){" >> $name_full
+		echo "	[ \$1 -le \$DEBUG ] && echo \"--- DEBUG \$*\" " >> $name_full
+		echo "}" >> $name_full
+	fi
 else
 	echo "File already exists"
 fi
