@@ -46,7 +46,7 @@ if ! [ -f "$name_full" ]; then
 
 	echo "#solved by FabioLima" >> $name_full
 	echo "#" >> $name_full
-	echo "#NameScript:	" >> $name_full
+	echo "#NameScript:	$name_full" >> $name_full
 	echo "#" >> $name_full
 	echo "#Author and Maintaining: Fabio Lima" >> $name_full
 	echo "#" >> $name_full
