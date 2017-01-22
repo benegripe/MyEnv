@@ -40,7 +40,6 @@ file_extension=$2
 flag_debug=" "
 flag_debug=$3
 name_full+=${file_extension,,}
-echo $flag_debug
 
 if ! [ -f "$name_full" ]; then
 	touch $name_full
