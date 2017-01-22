@@ -30,10 +30,17 @@
 #License: GPL
 #
 
+#flags to debug
+set -e #exit after first command failure
+set -o #exit if any part of the pipe fails
+
 name_full=$1
 name_full+="."
 file_extension=$2
+flag_debug=" "
+flag_debug=$3
 name_full+=${file_extension,,}
+echo $flag_debug
 
 if ! [ -f "$name_full" ]; then
 	touch $name_full
@@ -73,7 +80,13 @@ if ! [ -f "$name_full" ]; then
 	echo "#License: GPL" >> $name_full
 	echo "#" >> $name_full
 
-	if [ ${file_extension,,} = "sh" ]; then
+	if [ ${file_extension,,} = "sh" ] && [ ${flag_debug} = "d" ]; then
+		echo "	" >> $name_full
+		echo "#FlagDebug" >> $name_full
+		echo "set -u"  >> $name_full
+		echo "set -e"  >> $name_full
+		echo "set -o pipefail"  >> $name_full
+	
 		echo "	" >> $name_full
 		echo "Debug(){" >> $name_full
 		echo "	[ \$1 -le \$DEBUG ] && echo \"--- DEBUG \$*\" " >> $name_full
